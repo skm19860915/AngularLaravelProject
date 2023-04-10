@@ -1,0 +1,70 @@
+.example-small-box,
+.example-large-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.example-small-box {
+    height: 100px;
+    width: 100px;
+}
+
+.example-large-box {
+    height: 300px;
+    width: 300px;
+}
+
+
+/* /////////////////// */
+
+.mat-tab-header {
+    margin: 0 0 2.1875em;
+}
+
+.mat-tab-body-wrapper {
+    box-shadow: 0 0 0.9375em rgb(25 42 70 / 10%);
+}
+
+.mat-tab-body-content {
+    padding: 3.125em 5em;
+}
+
+h2 {
+    float: none;
+}
+
+.upload-img-wrapper {
+    max-width: none !important;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+::ng-deep .mat-tab-label {
+    font-family: 'Archivo', sans-serif;
+}
+
+.mat-card {
+    width: calc(100% - 6px);
+    margin: auto;
+}
+:host ::ng-deep .avatar  {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-left: 25%;
+}
+
+.dashboard-bottom {
+    padding: 5.5em 2.1875em 1.875em;
+}

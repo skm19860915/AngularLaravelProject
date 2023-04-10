@@ -1,0 +1,19 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+    <mat-icon class="close-icon" color="warn">close</mat-icon>
+  </button>
+  
+  <h1 mat-dialog-title><img src="assets/img/share-icon.png" alt=""> Share Album</h1>
+  <div mat-dialog-content>
+    <div class="clear"></div>
+    <div class="share-links">
+      <div class="share-link">
+        <h6>Your Album Link</h6>
+        <div class="share-link-box">
+          <div class="share-link-text">{{albumLink}}</div>
+          <div class="modal-btn">
+            <button type="button" (click)="copyText(albumLink)">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

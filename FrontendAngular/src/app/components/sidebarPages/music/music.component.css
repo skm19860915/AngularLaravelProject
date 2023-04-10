@@ -1,0 +1,20 @@
+::ng-deep .mat-grid-tile .mat-figure {
+    margin: 0 0px 0.9375em !important;
+    padding: 0 0.4375em !important;
+  }
+  
+  .media-file {
+    width: 100%;
+  }
+  
+  .file-name-img img {
+    width: 31px;
+  }
+  
+  a {
+    cursor: pointer;
+  }
+  
+.dashboard-bottom {
+  padding: 5.5em 2.1875em 1.875em;
+}

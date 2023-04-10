@@ -1,0 +1,27 @@
+<div class="dashboard-sidebar" id="mySidebar" #appDrawer>
+    <button mat-icon-button class="closebtn" aria-label="" (click)="closeNav()">
+        <mat-icon>close</mat-icon>
+    </button>
+    <div class="logo"><a routerLink="/" class="user-account"><i class="fa fa-user" aria-hidden="true"></i></a>
+        <a routerLink="/"><img src="../../../assets/img/main-logo.png" alt="" /></a>
+    </div>
+    <div class="my-files-outer" id="myBox">
+        <h5>My Files</h5>
+        <div class="my-files">
+            <mat-sidenav-container>
+                <mat-sidenav mode="over" opened="true">
+                    <mat-nav-list>
+                        <app-menu-list-item *ngFor="let item of navItems" [item]="item"></app-menu-list-item>
+                    </mat-nav-list>
+                </mat-sidenav>
+            </mat-sidenav-container>
+        </div>
+    </div>
+    <div class="sidebar-logout"><a routerLink="/"><i class="fa fa-sign-out"></i> Logout</a></div>
+    <div class="disk-space">
+        <h5 [ngStyle]="{'display': ((allRate==0)?'none':'')}">Disk Space Usage</h5>
+        <div [ngStyle]="{'display': ((allRate==0)?'none':'')}" class="space-count">{{convertToBigUnit(usedRate)}} / {{convertToBigUnit(allRate)}}</div>
+        <div [ngStyle]="{'display': ((allRate==0)?'none':'')}" class="space-bar"><span class="space-bar-fill" style="width: 0%;" [ngStyle]="{'width': (usedRate * 100 / allRate) + '%'}"></span></div>
+        <a routerLink="/upgrade-account">Upgrade Account</a>
+    </div>
+</div>

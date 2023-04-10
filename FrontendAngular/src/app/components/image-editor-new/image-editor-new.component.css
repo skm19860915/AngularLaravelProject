@@ -1,0 +1,10 @@
+#rad-image-editor tui-image-editor {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+/*# sourceMappingURL=image-editor-new.component.css.map */
+
+a {
+  cursor: pointer;
+}

@@ -1,0 +1,32 @@
+<div class="dashboard-topbar" [ngClass]="{'sticky' : isSticky}">
+    <form class="search-form" action="">
+        <input type="text" matInput  placeholder="Search for photos, albums..." [(ngModel)] = "searchText" (input)="searchThis()"  [ngModelOptions]="{standalone: true}"/>
+        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </form>
+    <div class="topbar-btns">
+        <a [hidden] = "hideButtons==true" routerLink = "/uploading" class="green-btns" style = "line-height: 3em;">Upload files</a>
+        <a [hidden] = "hideButtons==true" routerLink = "/folder-creation" class="blue-btns">Create Album</a>
+        <a [hidden] = "hideButtons==true" (click) = "downloadAlbum()" class="blue-btns" style="cursor: pointer;">Download Album</a>
+        <a [hidden] = "hideButtons==true" (click) = "renameAlbum()" class="blue-btns" style="cursor: pointer;">Rename Album</a>
+        <a [hidden] = "hideButtons==true" (click) = "deleteAlbum()" class="blue-btns" style="cursor: pointer;">Delete Album</a>
+        <a [hidden] = "hideButtons==true" (click) = "privateAlbum()" class="blue-btns" style="cursor: pointer;">Album Privacy</a>
+        <a [hidden] = "hideButtons==true" (click) = "shareAlbum()" class="blue-btns" style="cursor: pointer;">Share Album</a>
+        <div class="user-account-outer">
+            <a class="user-account"><i class="fa fa-user" aria-hidden="true"></i></a>
+            <div class="ua-dropdown">
+                <div class="ua-dropdown-outer">
+                    <div class="ua-links">
+                        <a href="/account"><i class="fa fa-user"></i>Account</a>
+                        <a (click)="logout()"><i class="fa fa-sign-out"></i>Log out</a>
+                    </div>
+                    <div class="ua-storage" [ngStyle] = "{'display': ((allRate==0)?'none':'')}" >
+                        <h5>Storage <span>{{getPercent()}}%</span></h5>
+                        <div class="ua-st-line"><span class="ua-fill" [ngStyle]="{'width': usedRate * 100 / allRate + '%'}" ></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="{{adminURL}}" class="admin-link" *ngIf="isAdmin"><span style = "padding: 20px;">Admin</span></a>
+    </div>
+    <div class="clear"></div>
+</div>

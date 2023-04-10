@@ -1,0 +1,40 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    width: 100%;
+}
+
+:host .mat-list-item.active {
+    background-color: rgb(255, 255, 255);
+}
+
+:host:hover>.mat-list-item:not(.selected),
+ :host:focus>.mat-list-item:not(.selected) {
+    background-color: rgba(255, 255, 255, 0.192) !important;
+}
+
+.mat-list-item .routeIcon {
+    margin-right: 5px;
+}
+
+:host /deep/ .mat-list-item-content {
+    justify-content: space-between;
+}
+
+:host a.menu-list-item.selected {
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+}
+
+img {
+    width: inherit;
+    height: inherit;
+    margin-top: 0px!important;
+    margin-left: 0px!important;
+}
+app-menu-list-item{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}

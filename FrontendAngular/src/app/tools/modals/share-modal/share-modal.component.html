@@ -1,0 +1,46 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button>
+
+<h1 mat-dialog-title><img src="assets/img/share-icon.png" alt=""> Share Link</h1>
+<div mat-dialog-content>
+  <!-- <div class="share-icons" *ngIf="show_social_share">
+    <button shareButton="facebook"><i class="fa fa-facebook"></i><span>Facebook</span></button>
+    <button shareButton="twitter"><i class="fa fa-twitter"></i><span>Twitter</span></button>
+    <button shareButton="pinterest"><i class="fa fa-pinterest"></i><span>Pinterest</span></button>
+    <button shareButton="whatsapp"><i class="fa fa-whatsapp"></i><span>Whatsapp</span></button>
+    <button shareButton="email"><i class="fa fa-envelope"></i><span>Email</span></button>
+  </div> -->
+  <share-buttons [theme]="'material-dark'" [include]="['facebook','twitter','pinterest','whatsapp','email']"
+    [show]="5" [image] = "direct_link" [url]="share_url" [autoSetMeta]="false"></share-buttons>
+  <div class="clear"></div>
+  <div class="share-links">
+    <div class="share-link" *ngIf="show_direct_link">
+      <h6>Direct Link</h6>
+      <div class="share-link-box">
+        <div class="share-link-text">{{direct_link}}</div>
+        <div class="modal-btn">
+          <button type="button" (click)="copyText(direct_link)">Copy</button>
+        </div>
+      </div>
+    </div>
+    <div class="share-link" *ngIf="show_forum_code">
+      <h6>Embed Link</h6>
+      <div class="share-link-box">
+        <div class="share-link-text">{{html_code}}</div>
+        <div class="modal-btn">
+          <button type="button" (click)="copyText(html_code)">Copy</button>
+        </div>
+      </div>
+    </div>
+    <div class="share-link" *ngIf="show_html_code">
+      <h6>IMG Link</h6>
+      <div class="share-link-box">
+        <div class="share-link-text">{{forum_code}}</div>
+        <div class="modal-btn">
+          <button type="button" (click)="copyText(forum_code)">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

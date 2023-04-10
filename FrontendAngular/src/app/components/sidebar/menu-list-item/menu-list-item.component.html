@@ -1,0 +1,25 @@
+<a mat-list-item [ngStyle]="{'padding-left': (depth * 12) + 'px'}"
+    [ngClass]="{'expanded': expanded, 'selected': item?.selected && expanded}" class="menu-list-item"
+    (click)="onItemSelected(item)">
+    <div fxFlex fxLayout="row" fxLayoutAlign="none center">
+        <img *ngIf="item.iconName != 'person'" mat-card-image src="{{item.iconName}}" alt="icon" width="25px"
+            height="18px" class="mr-2 mb-1"> {{item.displayName}}
+    </div>
+
+    <span *ngIf="!item.children || !item.children.length" style="font-size: 13px; justify-content: left; padding-right: 34px;">({{item.files}})</span>
+    
+    <span fxFlex *ngIf="item.children && item.children.length">
+        <span fxFlex></span>
+        <span style="font-size: 13px; justify-content: left; padding-right: 10px;">({{item.files}})</span>
+        <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'" (click)="onIconSelected(item)">
+            expand_more
+        </mat-icon>
+    </span>
+</a>
+<div *ngIf="expanded">
+    <app-menu-list-item *ngFor="let child of item.children" [item]="child" [depth]="depth+1"
+        [title]="child.displayName">
+    </app-menu-list-item>
+</div>
+
+<!-- <a mat-list-item [ngStyle]="{'padding-left': (depth * 12) + 'px'}" [ngClass]="{'expanded': expanded, 'selected': item?.selected && expanded}" class="menu-list-item"></a> -->

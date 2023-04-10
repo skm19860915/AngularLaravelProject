@@ -1,0 +1,46 @@
+<div class="dashboard-content">
+    <div class="dashboard-bottom">
+      <div class="tab-content">
+        <div id="fm-grid-view"
+          [ngClass]="'tab-pane fade in active show'"
+          class="tab-pane fade in active show">
+          <div class="recent-file-outer">
+            <div class="recent-file-head">
+              
+            </div>
+            <div class="changing-btn pl-0 desktop-div">
+              
+              <div class="clear"></div>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="16px grid" *ngIf="protected==0">
+              <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of cardItems; let i = index;">
+                <app-card [SetItem]="item" [selection_list]="selection_list" >
+  
+                </app-card>
+              </div>
+            </div>
+            <div class="photo-box" *ngIf="protected==1" style="display: flex;">
+                <div style="margin:auto;font-size:35px">This album is private.</div>
+            </div>
+            <div class="photo-box" *ngIf="protected==2" style="padding:20px;">
+                <p style="font-size:35px;">
+                    If you want to access it, please enter the password below.
+                </p>
+                <div class="input-box">
+                    <i class="fa fa-lock"></i><input type="password" class="form-control" [(ngModel)]="passwordInput" />
+                </div>
+                <div class="form-row m-0" style="float:right">
+                    <button type="submit" class="btn btn-primary" (click)="confirmPassword()">
+                        Access
+                    </button>
+                </div>
+                <div style="color:red" *ngIf="wrongPassword">
+                    Wrong password.
+                </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

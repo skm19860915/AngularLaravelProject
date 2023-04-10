@@ -1,0 +1,19 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button>
+
+<h1 mat-dialog-title><img src="assets/img/edit-icon.png" alt="">Edit Privacy?</h1>
+<div mat-dialog-content>
+  <div class="privacy-select">
+    <mat-select [(value)]="privacy_select">
+      <mat-option value="0" >Public</mat-option>
+      <mat-option value="1">Private</mat-option>
+      <mat-option value="2">Private with password</mat-option>
+    </mat-select>
+    <input matInput type="text" style="margin-top:20px;" [hidden]="privacy_select!='2'" [(ngModel)]="password">
+  </div>
+  <div class="modal-btn">
+    <button mat-button class="btn-cancel" [mat-dialog-close]="undefined">Cancel</button>
+    <button mat-button class="btn-ok" (click)="onPrivacyConfirm()">Confirm</button>
+  </div>
+</div>

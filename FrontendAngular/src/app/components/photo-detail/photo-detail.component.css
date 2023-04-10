@@ -1,0 +1,27 @@
+.photo-box-icons a {
+    color: white;
+}
+
+.photo-details-top {
+    word-wrap: break-word;
+}
+
+.photo-information {
+    width: 100%;
+}
+
+.card {
+    border-color: transparent;
+    box-shadow: -8px 12px 18px rgb(25 42 70 / 13%);
+}
+
+.info {
+    border-left: 1px solid #F0F1F2;
+}
+a {
+    cursor: pointer;
+}
+.photo-box {
+    min-width: 400px;
+    min-height: 200px;
+}
